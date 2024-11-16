@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <title>Nhập thông tin của bạn | Samsung account</title>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="https://account.samsung.com/accounts/v1/resources/js/common/angular-block-ui/angular-block-ui.min.css">
+  <link rel="stylesheet" href="https://account.samsung.com/accounts/v1/resources/css/v2/angular-material.css">
+  <link rel="stylesheet" href="https://account.samsung.com/accounts/v1/resources/one-ui/css/default.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://account.samsung.com/accounts/v1/resources/one-ui/images/favicon.ico">
+
+  <!-- JavaScript -->
+  <script src="https://account.samsung.com/accounts/v1/resources/js/common/wip.js"></script>
+  <script src="https://account.samsung.com/accounts/v1/resources/js/v2/app.js"></script>
+  <script src="https://account.samsung.com/accounts/v1/resources/js/v2/run.js"></script>
+</head>
+
+<body onload="createPostMessage();" block-ui="main" class="ng-scope block-ui block-ui-anim-fade">
+  <div class="wrapper" data-ng-controller="cmmController as cmm">
+    <!-- Header -->
+    <header class="one-header">
+      <div class="header-inner">
+        <div class="logo">
+          <h1>
+            <img src="https://account.samsung.com/accounts/v1/resources/one-ui/images/svg/txt_logo.svg" alt="Samsung account">
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="one-main" data-ng-controller="inputController as vm">
+      <div class="main-inner" role="main">
+        <div class="container">
+          <div class="title">
+            <h1>Tạo tài khoản Samsung của bạn</h1>
+          </div>
+
+          <div class="content">
+            <!-- Registration Form -->
+            <main class="one-main ng-scope" data-ng-controller="inputController as vm">
+                <div class="main-inner" role="main" onclick="inputEvent()" onkeydown="inputEvent()" ng-init="inputEvent()">
+                  <div class="container">
+                    <div class="title">
+                      <h1>Tạo tài khoản Samsung của bạn</h1>
+                    </div>
+                    <!-- ngIf: vm.isAvailablePhoneID && vm.accessType=='signUp' && vm.signUpIDType == '003' && !vm.signUpIDFixed -->
+            
+                    <!-- ngIf: vm.isAvailablePhoneID && vm.accessType=='signUp' && vm.signUpIDType == '001' && !vm.signUpIDFixed -->
+            
+                    <div class="content">
+                      <!-- content -->
+                      <!-- forms -->
+                      <div class="one-forms joinAccount">
+                        <form name="signUpForm" autocomplete="off" method="post" class="ng-valid ng-valid-pattern ng-valid-maxlength ng-valid-email ng-dirty ng-valid-parse">
+                          <fieldset>
+                            <!-- email -->
+                            <!-- ngIf: vm.signUpIDType == '003' && (vm.accessType=='signUp') --><div id="ctnSignUpID" class="one-input-container ng-scope" data-ng-if="vm.signUpIDType == '003' &amp;&amp; (vm.accessType=='signUp')">
+                              <label id="lblSignUpID" for="signUpID">Email</label>
+                              <input data-ng-model="vm.signUpID" id="signUpID" name="signUpID" type="email" aria-required="true" aria-invalid="" aria-describedby="eid" maxlength="51" ng-change="emailValidation()" ng-model-options="{ allowInvalid: true, updateOn: 'keyup blur' }" not-enter="" not-space="" ng-blur="vm.signUpIDFocus = false; emailCheckProcess();" data-ng-focus="vm.signUpIDFocus = true" data-ng-disabled="vm.signUpIDFixed &amp;&amp; vm.emailID" class="ng-pristine ng-valid ng-empty ng-valid-email ng-valid-maxlength ng-touched" autocomplete="off">
+            
+                              <div data-ng-show="vm.emailValidationStatus=='invalid'" class="error-msg ng-hide" id="eidpattern">Địa chỉ email không hợp lệ.</div>
+                              <div data-ng-show="vm.emailValidationStatus=='lengthInvalid'" class="error-msg ng-hide" id="eidpattern">
+                                Địa chỉ email của bạn phải trong khoảng từ 5 đến  50 ký tự.
+                              </div>
+                              <div data-ng-show="vm.emailValidationStatus=='notAllowPattern'" class="error-msg ng-hide" id="eidpattern">Không được phép sử dụng ký tự đặc biệt, ngoài .-_+ trong địa chỉ email.</div>
+                              <div data-ng-show="vm.emailValidationStatus=='notAllowWord'" class="error-msg ng-hide" id="eidpattern">Địa chỉ email có chứa từ ngữ bị cấm.</div>
+            
+                              <!-- ngIf: !vm.signUpIDFocus --><div data-ng-if="!vm.signUpIDFocus" class="error-msg ng-scope">
+                                <div data-ng-switch="" on="err.signUpIDCode" data-ng-hide="!err.signUpID" class="ng-hide">
+                                  <!-- ngSwitchWhen: 01 -->
+                                  <!-- ngSwitchWhen: 99 -->
+                                  <!-- ngSwitchDefault: --><div data-ng-switch-default="" class="ng-scope"></div><!-- end ngSwitchWhen: -->
+                                </div>
+                              </div><!-- end ngIf: !vm.signUpIDFocus -->
+                            </div><!-- end ngIf: vm.signUpIDType == '003' && (vm.accessType=='signUp') -->
+            
+                            <!-- phone -->
+                            <!-- ngIf: vm.signUpIDType == '001' && (vm.accessType=='signUp') -->
+            
+            
+                            <!-- ngIf: vm.accessType=='signUp' --><div id="ctnPassword" class="one-password-container one-input-container ng-scope" data-ng-if="vm.accessType=='signUp'">
+                              <label id="lblPassword" for="password">Mật khẩu</label>
+                              <div class="one-password-input-container">
+                                <input data-ng-model="vm.password" id="password" name="password" type="password" maxlength="150" aria-required="true" aria-invalid="" aria-describeby="pw" data-ng-pattern="[object Object]" data-ng-focus="$parent.blnPasswordFocus=true;vm.showStrenth=true;" data-ng-blur="$parent.blnPasswordFocus=false;vm.showStrenth=false;" ng-model-options="{ updateOn: 'keyup blur' }" not-enter="" not-space="" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-pattern ng-valid-maxlength" autocomplete="off">
+                                <button type="button" tabindex="-1">
+                                  <img id="hideBtn" style="display: inline-block;" src="https://account.samsung.com/accounts/v1/resources/images/v2/ico_hide.svg">
+                                  <img id="showBtn" style="display: none;" src="https://account.samsung.com/accounts/v1/resources/images/v2/ico_show_view.svg">
+                                </button>
+                              </div>
+            
+                              <div data-ng-show="signUpForm.password.$error.pattern &amp;&amp; !$parent.blnPasswordFocus" class="error-msg ng-hide">
+                                <div data-ng-switch="" on="err.passwordCode">
+                                  <!-- ngSwitchWhen: 02 -->
+                                  <!-- ngSwitchWhen: 03 -->
+                                  <!-- ngSwitchWhen: 04 -->
+                                  <!-- ngSwitchWhen: 05 -->
+                                  <!-- ngSwitchWhen: 06 -->
+                                  <!-- ngSwitchDefault: --><div data-ng-switch-default="" class="ng-scope"></div><!-- end ngSwitchWhen: -->
+                                </div>
+                              </div>
+                              <div data-ng-show="err.passwordCode==07 &amp;&amp; !$parent.blnPasswordFocus" class="error-msg ng-hide">
+                                <div id="pw">Bạn có thể sử dụng mật mã này nhưng một số thiết bị cũ hơn không hỗ trợ mật mã có trên 15 ký tự.</div>
+                              </div>
+                              <!-- ngIf: !signUpForm.password.$error.pattern --><div data-ng-if="!signUpForm.password.$error.pattern" class="error-msg ng-scope">
+                                <div data-ng-switch="" on="err.passwordCode" data-ng-hide="!err.password" class="ng-hide">
+                                  <!-- ngSwitchWhen: 01 -->
+                                  <!-- ngSwitchWhen: 99 -->
+                                  <!-- ngSwitchDefault: --><div data-ng-switch-default="" class="ng-scope"></div><!-- end ngSwitchWhen: -->
+                                </div>
+                              </div><!-- end ngIf: !signUpForm.password.$error.pattern -->
+                            </div><!-- end ngIf: vm.accessType=='signUp' -->
+                            <!-- passwordToolTip -->
+            
+                            <!-- ngIf: vm.showStrenth -->
+                            <!-- //passwordToolTip -->
+            
+            
+                            <!-- ngIf: vm.accessType=='signUp' --><div id="ctnConfirmPassword" class="one-password-container one-input-container ng-scope" data-ng-if="vm.accessType=='signUp'">
+                              <label id="lblConfirmPassword" for="confirmPassword">Xác nhận mật khẩu</label>
+                              <div class="one-password-input-container">
+                                <input data-ng-model="vm.confirmPassword" id="confirmPassword" name="confirmPassword" type="password" aria-required="true" aria-invalid="signUpForm.confirmPassword.$error.required || ((signUpForm.password.$valid &amp;&amp; vm.password.length > 0 &amp;&amp; !$parent.blnPasswordFocus) &amp;&amp; signUpForm.confirmPassword.$valid &amp;&amp; vm.password != vm.confirmPassword)" data-ng-focus="$parent.blnPasswordFocusConfirm=true;" data-ng-blur="$parent.blnPasswordFocusConfirm=false;" aria-describeby="cpwError2" ng-model-options="{ updateOn: 'keyup blur' }" not-enter="" not-space="" class="ng-pristine ng-untouched ng-valid ng-empty" autocomplete="off">
+                                <button type="button" tabindex="-1">
+                                  <img id="hideBtn" style="display: inline-block;" src="https://account.samsung.com/accounts/v1/resources/images/v2/ico_hide.svg">
+                                  <img id="showBtn" style="display: none;" src="https://account.samsung.com/accounts/v1/resources/images/v2/ico_show_view.svg">
+                                </button>
+                              </div>
+            
+                              <!-- error text 영역 -->
+                              
+                              <div data-ng-show="!$parent.blnPasswordFocusConfirm &amp;&amp; vm.confirmPassword.length > 0 &amp;&amp; (signUpForm.password.$valid &amp;&amp; vm.password.length > 0 &amp;&amp; !$parent.blnPasswordFocus) &amp;&amp; signUpForm.confirmPassword.$valid &amp;&amp; vm.password != vm.confirmPassword" class="error-msg ng-hide" id="cpwError2">Mật mã không khớp.</div>
+                              <!-- //error text 영역 -->
+                            </div><!-- end ngIf: vm.accessType=='signUp' -->
+            
+                            <!--  미국 외 국가들 이릅 입력 필드 -->
+            
+                            <!-- ngIf: vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd !='USA' --><div id="ctnFamilyName" ng-class="{'active': vm.familyNameReadOnly}" class="one-input-container ng-scope" data-ng-if="vm.isTextFirstFamilyName &amp;&amp; vm.userAcsCnty3dgtCd !='USA'">
+                              <label id="lblFamilyName" for="familyName">Họ</label>
+                              <input data-ng-model="vm.familyName" id="familyName" name="familyName" type="text" data-ng-readonly="vm.familyNameReadOnly" aria-required="true" aria-invalid="signUpForm.familyName.$error.pattern || err.familyName" aria-describeby="fmerr2" maxlength="50" data-ng-trim="false" data-ng-pattern="/^([^£\s¥€§※☆★○●◎◇◆□■△▲▽▼→←←↑↓↔〓◁◀▷▶♤♠♡♥♧♣⊙◈▣◐◑▒▤▥▨▧▦▩♨☏☎☜☞¶†‡↕↗↙↖↘♭♩♪♬㉿{}\[\]\/?;:|)*~`!^+<>@#$%&amp;=×÷₩•°¤《》¡¿(&quot;\\\uD800-\uDFFF]+\s{0,1})*[^£\s¥€§※☆★○●◎◇◆□■△▲▽▼→←←↑↓↔〓◁◀▷▶♤♠♡♥♧♣⊙◈▣◐◑▒▤▥▨▧▦▩♨☏☎☜☞¶†‡↕↗↙↖↘♭♩♪♬㉿{}\[\]\/?;:|)*~`!^+<>@#$%&amp;=×÷₩•°¤《》¡¿(&quot;\\\uD800-\uDFFF]+$/" ng-model-options="{ updateOn: 'keyup blur' }" not-enter="" remove-emoji="" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-pattern ng-valid-maxlength" autocomplete="off">
+                              <!-- error text 영역 -->
+                              <div data-ng-show="signUpForm.familyName.$error.pattern" class="error-msg ng-hide" id="fmerr1">Tên không thể chứa ký tự đặc biệt.</div>
+                              <div data-ng-show="err.familyName" class="error-msg ng-hide" id="fmerr2">Vui lòng nhập họ của bạn.</div>
+                              <!-- //error text 영역 -->
+                            </div><!-- end ngIf: vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd !='USA' -->
+                            <!-- ngIf: vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd !='USA' --><div id="ctnGivenName" ng-class="{'active': vm.givenNameReadOnly}" class="one-input-container ng-scope" data-ng-if="vm.isTextFirstFamilyName &amp;&amp; vm.userAcsCnty3dgtCd !='USA'">
+                              <label id="lblGivenName" for="givenName">Tên</label>
+                              <input data-ng-model="vm.givenName" id="givenName" name="givenName" type="text" data-ng-readonly="vm.givenNameReadOnly" aria-required="true" aria-invalid="signUpForm.givenName.$error.pattern || err.givenName" aria-describeby="gverr2" maxlength="50" data-ng-trim="false" data-ng-pattern="/^([^£\s¥€§※☆★○●◎◇◆□■△▲▽▼→←←↑↓↔〓◁◀▷▶♤♠♡♥♧♣⊙◈▣◐◑▒▤▥▨▧▦▩♨☏☎☜☞¶†‡↕↗↙↖↘♭♩♪♬㉿{}\[\]\/?;:|)*~`!^+<>@#$%&amp;=×÷₩•°¤《》¡¿(&quot;\\\uD800-\uDFFF]+\s{0,1})*[^£\s¥€§※☆★○●◎◇◆□■△▲▽▼→←←↑↓↔〓◁◀▷▶♤♠♡♥♧♣⊙◈▣◐◑▒▤▥▨▧▦▩♨☏☎☜☞¶†‡↕↗↙↖↘♭♩♪♬㉿{}\[\]\/?;:|)*~`!^+<>@#$%&amp;=×÷₩•°¤《》¡¿(&quot;\\\uD800-\uDFFF]+$/" ng-model-options="{ updateOn: 'keyup blur' }" not-enter="" remove-emoji="" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-pattern ng-valid-maxlength" autocomplete="off">
+                              <!-- error text 영역 -->
+                              <div data-ng-show="signUpForm.givenName.$error.pattern" class="error-msg ng-hide" id="gverr1">Tên không thể chứa ký tự đặc biệt.</div>
+                              <div data-ng-show="err.givenName" class="error-msg ng-hide" id="gverr2">Vui lòng nhập tên của bạn.</div>
+                              <!-- //error text 영역 -->
+                            </div><!-- end ngIf: vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd !='USA' -->
+                            <!-- ngIf: !vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd !='USA' -->
+                            <!-- ngIf: !vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd !='USA' -->
+            
+                            <!-- 미국 국가 진입 시 이름 입력 필드는 영어 대소문자만 허용 -->
+                            <!-- ngIf: vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd=='USA' -->
+                            <!-- ngIf: vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd=='USA' -->
+                            <!-- ngIf: !vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd=='USA' -->
+                            <!-- ngIf: !vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd=='USA' -->
+            
+                            <div class="oneinput-flexbox">
+            
+                              <div ng-class="{'off': vm.birthDateReadOnly}" class="one-input-container active flexbdy">
+                                <label for="day">Ngày sinh</label>
+                              </div>
+            
+                              <!-- ngIf: !vm.isTextFirstDateYear && !($parent.angularCountryCode == 'USA') --><div id="ctnDay" ng-class="{'active': vm.birthDateReadOnly}" class="one-input-container ng-scope" data-ng-if="!vm.isTextFirstDateYear &amp;&amp; !($parent.angularCountryCode == 'USA')">
+                                <label id="lblDay" for="day">Ngày</label>
+                                <input type="tel" id="day" name="day" data-ng-model="vm.day" maxlength="2" data-ng-readonly="vm.birthDateReadOnly" aria-required="true" aria-invalid="" aria-describedby="bderror" data-ng-focus="vm.showTip=true;" data-ng-blur="vm.showTip=false;" ng-model-options="{ updateOn: 'keyup blur' }" not-enter="" kr-input="" data-ng-pattern="/^[0-9]{1,4}$/" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-pattern ng-valid-maxlength" autocomplete="off">
+                              </div><!-- end ngIf: !vm.isTextFirstDateYear && !($parent.angularCountryCode == 'USA') -->
+            
+                              <!-- ngIf: vm.isTextFirstDateYear && !($parent.angularCountryCode == 'USA') -->
+            
+                              <!-- ngIf: !vm.birthDateReadOnly  && !($parent.angularCountryCode == 'USA') --><div id="ctnMonth" class="one-input-container selectfield ng-scope" data-ng-if="!vm.birthDateReadOnly  &amp;&amp; !($parent.angularCountryCode == 'USA')">
+                                <label id="lblMonth" for="month">Tháng</label>
+                                <select id="month" name="month" data-ng-model="vm.month" items="vm.month" data-validate="select" aria-required="true" aria-invalid="" aria-describedby="bderror" data-ng-focus="vm.showTip=true;" data-ng-blur="vm.showTip=false;" class="ng-untouched ng-valid ng-empty ng-dirty ng-valid-parse">
+                                  <option hidden="" disabled="" value="" selected="selected">Tháng</option>
+                                  <!-- ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange --><option data-ng-repeat="value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange" id="month0" value="01" class="ng-binding ng-scope">Tháng 1
+                                  </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange --><option data-ng-repeat="value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange" id="month1" value="02" class="ng-binding ng-scope">Tháng 2
+                                  </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange --><option data-ng-repeat="value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange" id="month2" value="03" class="ng-binding ng-scope">Tháng 3
+                                  </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange --><option data-ng-repeat="value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange" id="month3" value="04" class="ng-binding ng-scope">Tháng 4
+                                  </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange --><option data-ng-repeat="value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange" id="month4" value="05" class="ng-binding ng-scope">Tháng 5
+                                  </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange --><option data-ng-repeat="value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange" id="month5" value="06" class="ng-binding ng-scope">Tháng 6
+                                  </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange --><option data-ng-repeat="value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange" id="month6" value="07" class="ng-binding ng-scope">Tháng 7
+                                  </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange --><option data-ng-repeat="value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange" id="month7" value="08" class="ng-binding ng-scope">Tháng 8
+                                  </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange --><option data-ng-repeat="value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange" id="month8" value="09" class="ng-binding ng-scope">Tháng 9
+                                  </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange --><option data-ng-repeat="value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange" id="month9" value="10" class="ng-binding ng-scope">Tháng 10
+                                  </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange --><option data-ng-repeat="value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange" id="month10" value="11" class="ng-binding ng-scope">Tháng 11
+                                  </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange --><option data-ng-repeat="value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange" id="month11" value="12" class="ng-binding ng-scope">Tháng 12
+                                  </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange -->
+                                </select>
+                              </div><!-- end ngIf: !vm.birthDateReadOnly  && !($parent.angularCountryCode == 'USA') -->
+            
+                              <!-- ngIf: vm.birthDateReadOnly  && !($parent.angularCountryCode == 'USA') -->
+            
+                              <!-- ngIf: !vm.isTextFirstDateYear && !($parent.angularCountryCode == 'USA') --><div ng-class="{'active': vm.birthDateReadOnly}" id="ctnYear" class="one-input-container ng-scope" data-ng-if="!vm.isTextFirstDateYear &amp;&amp; !($parent.angularCountryCode == 'USA')">
+                                <label id="lblYear" for="year">Năm</label>
+                                <input type="tel" id="year" name="year" data-ng-model="vm.year" maxlength="4" data-ng-readonly="vm.birthDateReadOnly" aria-required="true" aria-invalid="" aria-describedby="bderror" data-ng-focus="vm.showTip=true;" data-ng-blur="vm.showTip=false;" ng-model-options="{ updateOn: 'keyup blur' }" not-enter="" kr-input="" data-ng-pattern="/^[0-9]{1,4}$/" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-pattern ng-valid-maxlength" autocomplete="off">
+                              </div><!-- end ngIf: !vm.isTextFirstDateYear && !($parent.angularCountryCode == 'USA') -->
+            
+                              <!-- ngIf: vm.isTextFirstDateYear && !($parent.angularCountryCode == 'USA') -->
+            
+                              <!-- ngIf: ($parent.angularCountryCode == 'USA') -->
+            
+            
+                              <!-- ngIf: ($parent.angularCountryCode == 'USA') -->
+            
+                              <!-- ngIf: ($parent.angularCountryCode == 'USA') -->
+            
+            
+                              <input data-ng-model="vm.birthDate" id="birthDate" name="birthDate" type="hidden" autocomplete="off" class="ng-pristine ng-untouched ng-valid ng-empty">
+                              <!-- error text 영역 -->
+                              <div data-ng-show="signUpForm.year.$error.pattern || signUpForm.day.$error.pattern" class="error-msg ng-hide" id="bdnumberpattern">
+                                Chỉ có thể nhập số.</div>
+                              <div data-ng-switch="" on="err.birthDateCode" class="error-msg ng-hide" data-ng-hide="!err.birthDate || signUpForm.year.$error.pattern || signUpForm.day.$error.pattern">
+                                <!-- ngSwitchWhen: 01 -->
+                                <!-- ngSwitchWhen: 02 -->
+                                <!-- ngSwitchWhen: fgb -->
+                                <!-- ngSwitchWhen: 99 -->
+                                <!-- ngSwitchDefault: --><div data-ng-switch-default="" id="bderror" class="ng-scope">Bạn phải đáp ứng yêu cầu về tuổi tối thiểu.</div><!-- end ngSwitchWhen: -->
+                              </div>
+                            </div>
+            
+                            <div class="tooltip ng-hide" data-ng-show="vm.showTip &amp;&amp; !vm.birthDateReadOnly">
+                              <dl>
+                                <dt><strong>Ngày sinh</strong></dt>
+                                <dd>Chúng tôi sử dụng ngày sinh của bạn để xác thực danh tính của bạn nếu bạn quên địa chỉ email. Chúng tôi cũng sử dụng thông tin này để đảm bảo bạn có thể sử dụng các ứng dụng có giới hạn tuổi.</dd>
+                              </dl>
+                            </div>
+            
+            
+                            <div class="one-input-container ng-hide" data-ng-show="$parent.angularCountryCode == 'CHN' &amp;&amp; vm.accessType=='signUp' &amp;&amp; vm.signUpIDType == '003' &amp;&amp; vm.nameCheckMethodEnum != 'CN_IDCard'">
+                              <label for="homeTelCellValueText">Số điện thoại</label>
+                              <input data-ng-model="vm.homeTelCellValueText" id="homeTelCellValueText" name="homeTelCellValueText" type="tel" aria-required="true" data-ng-focus="$parent.phoneNumFocus=true;" data-ng-blur="$parent.phoneNumFocus=false;" aria-invalid="err.homeTelCellValueText || signUpForm.homeTelCellValueText.$error.pattern" aria-describeby=" signUpForm.homeTelCellValueText.$error.pattern ? 'htcerror' : 'htcerror2'}}" maxlength="15" data-ng-pattern="/^[0-9]{6,20}$/" ng-model-options="{ updateOn: 'keyup blur' }" not-enter="" not-space="" kr-input="" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-pattern ng-valid-maxlength" autocomplete="off">
+                              <!-- error text 영역 -->
+                              <div data-ng-show="!$parent.phoneNumFocus &amp;&amp; signUpForm.homeTelCellValueText.$error.pattern" class="error-msg ng-hide" id="htcerror">
+                                Chỉ có thể nhập số.</div>
+                              <div data-ng-show="!($parent.phoneNumFocus &amp;&amp; signUpForm.homeTelCellValueText.$error.pattern) &amp;&amp; err.homeTelCellValueText" class="error-msg ng-hide" id="htcerror2">Vui lòng nhập Số điện thoại.</div>
+                              <!-- //error text 영역 -->
+                            </div>
+                            <!-- ngIf: (vm.accessType=='signUp') && (($parent.angularCountryCode == 'USA') || $parent.angularCountryCode == 'CAN') -->
+            
+                            <div data-ng-show="vm.accessType=='signUp' &amp;&amp; vm.isAvailablePhoneID &amp;&amp; vm.scrtyQstnVOList &amp;&amp; vm.signUpIDType == '001'" class="ng-hide">
+                              <div class="one-input-container selectfield" items="vm.scrtyQstnVOList" id="vm.securityQuestionID">
+                                <label for="securityQuestionID">Câu hỏi bảo mật</label>
+                                <select id="securityQuestionID" data-ng-model="vm.securityQuestionID" class="ng-pristine ng-untouched ng-valid ng-empty">
+                                  <option style="display: none" value="" selected="selected"></option>
+                                  <!-- ngRepeat: item in vm.scrtyQstnVOList -->
+                                </select>
+            
+                              <div class="one-input-container">
+                                <label for="securityAnswer">Trả lời</label>
+                                <input id="securityAnswer" name="securityAnswer" data-ng-model="vm.securityAnswer" type="text" aria-required="true" aria-invalid="err.securityAnswer" aria-describeby="secuError" maxlength="50" ng-model-options="{ updateOn: 'keyup blur' }" data-ng-trim="false" not-enter="" remove-emoji="" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" autocomplete="off">
+                                <!-- ngIf: err.securityAnswer && err.securityAnswerCode=='01' -->
+                                <!-- ngIf: err.securityAnswer && err.securityAnswerCode=='02' -->
+                                <!-- ngIf: err.securityAnswer && err.securityAnswerCode=='03' -->
+                                <!-- ngIf: err.securityAnswer && err.securityAnswerCode=='04' -->
+                                <!-- ngIf: err.securityAnswer && err.securityAnswerCode=='05' -->
+                              </div>
+                            </div>
+            
+                            <!-- capcha -->
+            
+                            
+            <script type="text/javascript">
+              //<![CDATA[
+              var RecaptchaOptions = {
+                theme: 'custom'
+              };
+              //]]>
+            </script>
+            <!-- ngIf: $parent.captchaTypeEnum == 'S' -->
+            <!-- ngIf: $parent.captchaTypeEnum == 'A' -->
+            <div id="audioCaptchaArea" style="display:block; height:0; font-size:0; line-height:0;"></div>
+            <!-- ngIf: $parent.captchaTypeEnum == 'R' -->
+            <!-- ngIf: $parent.captchaTypeEnum == 'G' -->
+            <!-- ngIf: $parent.captchaTypeEnum == 'I' -->
+            <div class="one-input-container  ng-hide" data-ng-show="$parent.captchaTypeEnum != null &amp;&amp; $parent.captchaTypeEnum != 'G' &amp;&amp; $parent.captchaTypeEnum != 'I'">
+              <label for="responseCapthcha">Mã bảo mật</label>
+              <input data-ng-model="vm.responseCapthcha" id="responseCapthcha" name="responseCapthcha" type="text" maxlength="50" ng-model-options="{ updateOn: 'keyup blur' }" aria-required="true" aria-invalid="false" aria-describedby="" not-enter="" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" autocomplete="off">
+              <div class="error-msg">
+                <div data-ng-show="err.responseCapthcha &amp;&amp; err.responseCapthchaCode == '01'" id="cap" class="ng-hide">Vui lòng nhập mã bảo mật</div>
+                <div data-ng-show="err.responseCapthcha &amp;&amp; err.responseCapthchaCode == '99'" id="cap" class="ng-hide">Đã nhập ID, mật mã hoặc mã bảo mật không hợp lệ. <br>Vui lòng thử lại.</div>
+                <div data-ng-show="err.responseCapthcha &amp;&amp; err.responseCapthchaCode == '02'" data-ng-bind="err.message" id="cap" class="ng-binding ng-hide"></div>
+              </div>
+            </div>
+            
+            
+                            <!-- //capcha -->
+            
+                          </div></fieldset>
+                        </form>
+                      </div>
+                    </div>
+                    <!-- //forms -->
+            
+                    <!-- //content -->
+                  </div>
+                  <!-- //container -->
+                  <!-- under content -->
+                  <div class="under-content">
+            
+                    <div class="one-btn-container wise">
+                      <button id="btnGoBack" class="one-cancel one-button" type="button" data-ng-click="btnGoBack()">Trở về</button>
+                      <button id="submitForCaptcha" class="one-primary one-button" type="button" data-ng-disabled="signUpForm.$invalid || !vm.blnAllEleFilled || err.birthDate" data-ng-click="$parent.submitForCaptcha()" disabled="disabled">
+                        Tiếp</button>
+                    </div>
+                  </div>
+                  <!--//under content -->
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+</body>
+
+</html>
