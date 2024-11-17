@@ -97,12 +97,7 @@
             
                               <div data-ng-show="signUpForm.password.$error.pattern &amp;&amp; !$parent.blnPasswordFocus" class="error-msg ng-hide">
                                 <div data-ng-switch="" on="err.passwordCode">
-                                  <!-- ngSwitchWhen: 02 -->
-                                  <!-- ngSwitchWhen: 03 -->
-                                  <!-- ngSwitchWhen: 04 -->
-                                  <!-- ngSwitchWhen: 05 -->
-                                  <!-- ngSwitchWhen: 06 -->
-                                  <!-- ngSwitchDefault: --><div data-ng-switch-default="" class="ng-scope"></div><!-- end ngSwitchWhen: -->
+                                <div data-ng-switch-default="" class="ng-scope"></div><!-- end ngSwitchWhen: -->
                                 </div>
                               </div>
                               <div data-ng-show="err.passwordCode==07 &amp;&amp; !$parent.blnPasswordFocus" class="error-msg ng-hide">
@@ -138,9 +133,8 @@
                               <!-- //error text 영역 -->
                             </div><!-- end ngIf: vm.accessType=='signUp' -->
             
-                            <!--  미국 외 국가들 이릅 입력 필드 -->
             
-                            <!-- ngIf: vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd !='USA' --><div id="ctnFamilyName" ng-class="{'active': vm.familyNameReadOnly}" class="one-input-container ng-scope" data-ng-if="vm.isTextFirstFamilyName &amp;&amp; vm.userAcsCnty3dgtCd !='USA'">
+                              <div id="ctnFamilyName" ng-class="{'active': vm.familyNameReadOnly}" class="one-input-container ng-scope" data-ng-if="vm.isTextFirstFamilyName &amp;&amp; vm.userAcsCnty3dgtCd !='USA'">
                               <label id="lblFamilyName" for="familyName">Họ</label>
                               <input data-ng-model="vm.familyName" id="familyName" name="familyName" type="text" data-ng-readonly="vm.familyNameReadOnly" aria-required="true" aria-invalid="signUpForm.familyName.$error.pattern || err.familyName" aria-describeby="fmerr2" maxlength="50" data-ng-trim="false" data-ng-pattern="/^([^£\s¥€§※☆★○●◎◇◆□■△▲▽▼→←←↑↓↔〓◁◀▷▶♤♠♡♥♧♣⊙◈▣◐◑▒▤▥▨▧▦▩♨☏☎☜☞¶†‡↕↗↙↖↘♭♩♪♬㉿{}\[\]\/?;:|)*~`!^+<>@#$%&amp;=×÷₩•°¤《》¡¿(&quot;\\\uD800-\uDFFF]+\s{0,1})*[^£\s¥€§※☆★○●◎◇◆□■△▲▽▼→←←↑↓↔〓◁◀▷▶♤♠♡♥♧♣⊙◈▣◐◑▒▤▥▨▧▦▩♨☏☎☜☞¶†‡↕↗↙↖↘♭♩♪♬㉿{}\[\]\/?;:|)*~`!^+<>@#$%&amp;=×÷₩•°¤《》¡¿(&quot;\\\uD800-\uDFFF]+$/" ng-model-options="{ updateOn: 'keyup blur' }" not-enter="" remove-emoji="" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-pattern ng-valid-maxlength" autocomplete="off">
                               <!-- error text 영역 -->
@@ -155,15 +149,7 @@
                               <div data-ng-show="signUpForm.givenName.$error.pattern" class="error-msg ng-hide" id="gverr1">Tên không thể chứa ký tự đặc biệt.</div>
                               <div data-ng-show="err.givenName" class="error-msg ng-hide" id="gverr2">Vui lòng nhập tên của bạn.</div>
                               <!-- //error text 영역 -->
-                            </div><!-- end ngIf: vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd !='USA' -->
-                            <!-- ngIf: !vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd !='USA' -->
-                            <!-- ngIf: !vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd !='USA' -->
-            
-                            <!-- 미국 국가 진입 시 이름 입력 필드는 영어 대소문자만 허용 -->
-                            <!-- ngIf: vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd=='USA' -->
-                            <!-- ngIf: vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd=='USA' -->
-                            <!-- ngIf: !vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd=='USA' -->
-                            <!-- ngIf: !vm.isTextFirstFamilyName && vm.userAcsCnty3dgtCd=='USA' -->
+                            </div>
             
                             <div class="oneinput-flexbox">
             
@@ -196,35 +182,17 @@
                                   </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange --><option data-ng-repeat="value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange" id="month11" value="12" class="ng-binding ng-scope">Tháng 12
                                   </option><!-- end ngRepeat: value in ['Tháng 1','Tháng 2','Tháng 3','Tháng 4','Tháng 5','Tháng 6','Tháng 7','Tháng 8','Tháng 9','Tháng 10','Tháng 11','Tháng 12'] | monthTextRange -->
                                 </select>
-                              </div><!-- end ngIf: !vm.birthDateReadOnly  && !($parent.angularCountryCode == 'USA') -->
-            
-                              <!-- ngIf: vm.birthDateReadOnly  && !($parent.angularCountryCode == 'USA') -->
-            
-                              <!-- ngIf: !vm.isTextFirstDateYear && !($parent.angularCountryCode == 'USA') --><div ng-class="{'active': vm.birthDateReadOnly}" id="ctnYear" class="one-input-container ng-scope" data-ng-if="!vm.isTextFirstDateYear &amp;&amp; !($parent.angularCountryCode == 'USA')">
+                              </div>
+                              <div ng-class="{'active': vm.birthDateReadOnly}" id="ctnYear" class="one-input-container ng-scope" data-ng-if="!vm.isTextFirstDateYear &amp;&amp; !($parent.angularCountryCode == 'USA')">
                                 <label id="lblYear" for="year">Năm</label>
                                 <input type="tel" id="year" name="year" data-ng-model="vm.year" maxlength="4" data-ng-readonly="vm.birthDateReadOnly" aria-required="true" aria-invalid="" aria-describedby="bderror" data-ng-focus="vm.showTip=true;" data-ng-blur="vm.showTip=false;" ng-model-options="{ updateOn: 'keyup blur' }" not-enter="" kr-input="" data-ng-pattern="/^[0-9]{1,4}$/" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-pattern ng-valid-maxlength" autocomplete="off">
-                              </div><!-- end ngIf: !vm.isTextFirstDateYear && !($parent.angularCountryCode == 'USA') -->
-            
-                              <!-- ngIf: vm.isTextFirstDateYear && !($parent.angularCountryCode == 'USA') -->
-            
-                              <!-- ngIf: ($parent.angularCountryCode == 'USA') -->
-            
-            
-                              <!-- ngIf: ($parent.angularCountryCode == 'USA') -->
-            
-                              <!-- ngIf: ($parent.angularCountryCode == 'USA') -->
-            
-            
+                              </div>
                               <input data-ng-model="vm.birthDate" id="birthDate" name="birthDate" type="hidden" autocomplete="off" class="ng-pristine ng-untouched ng-valid ng-empty">
                               <!-- error text 영역 -->
                               <div data-ng-show="signUpForm.year.$error.pattern || signUpForm.day.$error.pattern" class="error-msg ng-hide" id="bdnumberpattern">
                                 Chỉ có thể nhập số.</div>
                               <div data-ng-switch="" on="err.birthDateCode" class="error-msg ng-hide" data-ng-hide="!err.birthDate || signUpForm.year.$error.pattern || signUpForm.day.$error.pattern">
-                                <!-- ngSwitchWhen: 01 -->
-                                <!-- ngSwitchWhen: 02 -->
-                                <!-- ngSwitchWhen: fgb -->
-                                <!-- ngSwitchWhen: 99 -->
-                                <!-- ngSwitchDefault: --><div data-ng-switch-default="" id="bderror" class="ng-scope">Bạn phải đáp ứng yêu cầu về tuổi tối thiểu.</div><!-- end ngSwitchWhen: -->
+                                <div data-ng-switch-default="" id="bderror" class="ng-scope">Bạn phải đáp ứng yêu cầu về tuổi tối thiểu.</div><!-- end ngSwitchWhen: -->
                               </div>
                             </div>
             
@@ -258,11 +226,6 @@
                               <div class="one-input-container">
                                 <label for="securityAnswer">Trả lời</label>
                                 <input id="securityAnswer" name="securityAnswer" data-ng-model="vm.securityAnswer" type="text" aria-required="true" aria-invalid="err.securityAnswer" aria-describeby="secuError" maxlength="50" ng-model-options="{ updateOn: 'keyup blur' }" data-ng-trim="false" not-enter="" remove-emoji="" class="ng-pristine ng-untouched ng-valid ng-empty ng-valid-maxlength" autocomplete="off">
-                                <!-- ngIf: err.securityAnswer && err.securityAnswerCode=='01' -->
-                                <!-- ngIf: err.securityAnswer && err.securityAnswerCode=='02' -->
-                                <!-- ngIf: err.securityAnswer && err.securityAnswerCode=='03' -->
-                                <!-- ngIf: err.securityAnswer && err.securityAnswerCode=='04' -->
-                                <!-- ngIf: err.securityAnswer && err.securityAnswerCode=='05' -->
                               </div>
                             </div>
             
