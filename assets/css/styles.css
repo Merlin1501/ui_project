@@ -1,0 +1,21 @@
+.carousel-inner {
+}
+
+#carousel-1 {
+  width: 100%;
+  max-width: 1440px;
+  position: relative;
+  justify-self: center;
+  height: 100%;
+}
+
+.carousel-item {
+  justify-content: center;
+}
+
+@media (min-width: 1400px) {
+  img {
+    height: 640px;
+  }
+}
+
