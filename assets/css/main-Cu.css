@@ -1,0 +1,541 @@
+/* Reset CSS */
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+#main #header {
+    height: 100px;
+    padding-top: 15px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.nav-top {
+    width: 100%;
+    height: 40px;
+}
+
+.subnav-top-logo {
+    text-align: center;
+}
+
+/*______________nav bot________________________________*/
+.nav-bot {
+    height: 40px;
+    width: 100%;
+}
+
+.nav-router {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.nav-router>li {
+    position: relative;
+}
+
+.nav-router>li>a {
+    font-size: 1.5rem;
+}
+
+.nav-router li a {
+    color: #FFF;
+    text-decoration: none;
+    line-height: 39px;
+    padding: 0 2.5rem;
+}
+
+.nav-router .Subnav-router li:hover a,
+.nav-router>li:hover>a {
+    color: #f8bf11;
+}
+
+.nav-router li:hover .Subnav-router {
+    display: block;
+}
+
+.nav-router .Subnav-router {
+    display: none;
+    position: absolute;
+    background-color: #000;
+    width: 100%;
+    opacity: 80%;
+}
+
+.Subnav-router>li>a {
+    font-size: 1.2rem;
+}
+
+.nav-bot>.nav-bot-icons {
+    position: absolute;
+    display: flex;
+    right: 0;
+    bottom: 2px;
+    line-height: 39px;
+}
+
+.nav-bot-left-icons,
+.nav-bot-right-icons {
+    display: flex;
+}
+
+.nav-bot-icons i:hover {
+    color: #f8bf11;
+}
+
+.nav-bot-icons>div>a {
+    text-decoration: none;
+}
+
+.search-icon,
+.user-icon,
+.cart-icon {
+    color: #FFF;
+    font-size: 1.5rem;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.menu-icon {
+    display: none;
+}
+/*__________________________search-box______________________*/
+.search-box{
+    width: 100%;
+    padding: 0.5rem 0;
+    position: fixed;
+    text-align: center;
+    background: #000;
+    opacity: 85%;
+    z-index: 1;
+}
+.Off {
+    display: none;
+}
+.sub-search-box{
+    border: 2px solid;
+    border-radius: 0.5rem;
+    border-color: #000;
+    padding-left: 0.5rem;
+    height: 1.5rem;
+    width: 90%; 
+}
+
+/*___________________________slider__________________________*/
+#slider {
+    margin-top: 100px;
+}
+
+#slider .slider-link {
+    position: relative
+}
+.slider-link img{
+    width: 100%;
+}
+#slider .slider-link .slider-content {
+    position: absolute;
+    color: whitesmoke;
+    font-size: 2.5rem;
+    bottom: 45px;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/*__________________________contend___________________________*/
+
+#bestseller {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#bestseller h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+.bestseller-list {
+    margin-top: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.bestseller-list a:hover {
+    opacity: 80%;
+}
+
+.bestseller-item {
+    width: calc(100% / 3);
+}
+
+.bestseller-img {
+    width: 350px;
+    border-radius: 10px;
+    margin: 0px 15px;
+}
+
+.about-content {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.about-content h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+#about .about-sub {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 15px 0px 10px 0px;
+    font-style: italic;
+    opacity: 70%;
+}
+
+#about p {
+    font-size: 1.8rem;
+    text-align: justify;
+    padding: 10px 0;
+}
+
+/*__________________________footer___________________________*/
+#footer {
+    width: 100%;
+    background-color: black;
+    padding: 1.5rem;
+}
+
+.head-footer {
+    color: #fff;
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+.bot-footer {
+    display: flex;
+}
+
+#footer .left-bot-footer,
+#footer .right-bot-footer {
+    width: 50%;
+    text-align: center;
+}
+
+.left-bot-footer .location_img {
+    width: 650px;
+}
+
+.left-bot-footer a:hover {
+    opacity: 70%;
+}
+
+.right-bot-footer h3 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 1rem 0rem;
+}
+
+.right-bot-footer span {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.right-bot-footer p {
+    color: #fff;
+}
+
+.right-bot-footer .right-bot-footer-icons {
+    font-size: 1.3rem;
+}
+
+.right-bot-footer-icons i {
+    margin: 0 1rem;
+    color: #fff;
+}
+
+.right-bot-footer-icons>a:hover>i {
+    color: #f8bf11;
+}
+
+#footer .ncr {
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+}
+
+/*_________________________users.html_________________________ */
+#users-middle {   
+    padding-top: 100px;
+    margin: 0 10%;
+}
+
+.avatar-img {
+    margin-top: 2%;
+    width: 15%;
+    border-radius: 50%;
+}
+
+.user-name {
+    padding-left: 2%;
+    width: 71%;
+    font-size: 1.6rem;
+    display: inline-block;
+}
+.Edit > a{
+    color: #000;
+}
+.user-avatar > .Edit:hover {
+    background-color: lightgrey;
+}
+
+
+.Edit{
+    width: 5%;
+    font-size: 1.2rem;
+    display: inline-block;
+    text-align: center;
+    border-radius: 10%;
+}
+
+.user-name>h1 {
+    font-weight: 500;
+}
+
+#content-middle .Profile,
+#content-middle .Security,
+#content-middle .orderHistory{
+    margin-top: 1rem;
+}
+
+.Profile-Name,
+.Profile-Date,
+.Profile-Sex,
+.Security-Email,
+.Security-Password {
+    display: flex;
+    padding: 1rem 0rem;
+}
+
+.Profile-table > a,
+.Security-table > a {
+    text-decoration: none;
+    color: #000;
+}
+
+.Profile-table .Profile-Name:hover,
+.Profile-table .Profile-Date:hover,
+.Profile-table .Profile-Sex:hover,
+.Security-table .Security-Password:hover {
+    background-color: lightgrey;
+}
+
+.Profile-Name .Sub-Name-L,
+.Profile-Date .Sub-Date-L,
+.Profile-Sex .Sub-Sex-L,
+.Security-Password .Sub-Password-L,
+.orderHistory-bill-1 .Sub-bill-1-L{
+    width: 20%;
+}
+
+.Profile-Name .Sub-Name-M,
+.Profile-Date .Sub-Date-M,
+.Profile-Sex .Sub-Sex-M,
+.Security-Password .Sub-Password-M,
+.orderHistory-bill-1 .Sub-bill-1-M{
+    width: 70%;
+    font-size: 1.4rem;
+}
+
+.Profile-Name .Sub-Name-R,
+.Profile-Date .Sub-Date-R,
+.Profile-Sex .Sub-Sex-R,
+.Security-Password .Sub-Password-R,
+.orderHistory-bill-1 .Sub-bill-1-R{
+    width: 10%;
+    font-size: 1.3rem;
+}
+.orderHistory-bill-1{
+    display: flex;
+    padding: 1rem 0 0 0 ;
+}
+.orderHistory-bill-1 .History-imgs{
+    width: 80%;
+    border-radius: 15%;
+}
+
+.orderHistory-bill-1 .Sub-bill-1-M{
+    width: 65%;
+    font-size: 1.4rem;
+}
+
+.orderHistory-bill-1 .Sub-bill-1-R{
+    width: 10%;
+    font-size: 1.3rem;
+}
+
+.orderHistory-bill-1 .Sub-bill-1-M,
+.orderHistory-bill-1 .Sub-bill-1-R{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.Sub-bill-1-L a:hover{
+    opacity: 80%;
+}
+.Sub-bill-1-M span{
+    font-weight: 600;
+}
+.Sub-bill-1-Detail{
+    width: 100%;
+    text-align: center;
+}
+.Detail-bill-1 {
+    color: #000;
+}
+.Detail-bill-1 .Sub-bill-1-Detail:hover {
+    background-color: lightgray;
+}
+.users-logout{
+   text-align: right;
+}
+
+.users-logout .sub-users-logout{
+   display: inline-block;
+   font-size: 1.2rem;
+   color: #000;
+}
+
+.users-logout a:hover{
+    border-radius: 15%;
+    background-color: lightgray;
+ }
+/*___________________________login______________________________*/
+#user-contend{
+    height: 936px;
+    /* padding-top: 56.25%; */
+    background-image:  url('/assest/img/background/user-background.jpg') ;
+    
+}
+.login {
+    justify-content: center;
+    justify-items: center;
+}
+
+.user-sub-contend {
+    width: 100%;
+    height: 36.5rem;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 300px;
+}
+
+.login .login-title {
+    /* padding-top: 120px; */
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+    line-height: 16px;
+}
+
+.login .login-text {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+    line-height: 16px;
+}
+
+.login-input {
+    display: flex;
+    justify-content: center;
+}
+
+.agree {
+    display: flex;
+    justify-content: center;
+}
+
+
+#CustomerEmail, #CustomerPassword, .login-account, #again-CustomerPassword {
+    margin-top: 18px;
+    border-top-width: 2px;
+    height: 44px;
+    padding: 1px 2px;
+    width: 25.125rem;
+    height: 2.875rem;
+    font-size: 1.4rem;
+}
+.login > a {
+    text-align: center;
+    text-decoration: none;
+
+}
+
+.customer_login-input a{
+    margin-bottom: 1rem;
+    float: right;
+}
+.login-account {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.login-account:hover{
+    opacity: 0.7;
+}
+
+
+.invalid {
+    color: red; 
+    font-weight: 500;
+}
+.input.invalid #CustomerEmail{
+    border-color: #f33a58;
+}
+.input.invalid #CustomerPassword{
+    border-color: #f33a58;
+}
+.input.invalid #again-CustomerPassword{
+    border-color: #f33a58;
+}
+
+.input.invalid .form-error {
+    color: #f33a58;
+}
+.CustomerEmail{
+    position: relative;
+}
